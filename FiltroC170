@@ -19,6 +19,11 @@ public class FiltrarLinhasC170ss {
 
             // Apenas arquivos, não pastas
             fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            fileChooser.setMultiSelectionEnabled(true);
+
+            // exibir arquivos de texto
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Arquivos de Texto", "txt");
+            fileChooser.setFileFilter(filter);
 
             // Seleção de arquivos
             int result = fileChooser.showOpenDialog(null);
@@ -65,5 +70,6 @@ public class FiltrarLinhasC170ss {
                     break;
             }
         } // fim while
+        entrada.close();
     }
 }
